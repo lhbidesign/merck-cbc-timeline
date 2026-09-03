@@ -26,16 +26,19 @@ export default function HelixPage() {
   };
 
   useEffect(() => {
-    if (selectedMilestone === null) return;
+    if (selectedMilestone === null) {
+      return;
+    }
+
     const idleTimer = setTimeout(() => {
       handleClosePopup();
-    }, 35000);
+    }, 90000);
 
     return () => clearTimeout(idleTimer);
   }, [selectedMilestone]);
 
   return (
-    <main className="helix-container w-full h-full relative">
+    <main className="helix-container w-full h-full relative" onContextMenu={(e) => e.preventDefault()}>
       <HelixBackground key={animationKey} paused={selectedMilestone !== null}>
         {/* Layer now positions strictly inside .stage */}
         <div className="absolute inset-0 pointer-events-none z-20">
@@ -45,7 +48,7 @@ export default function HelixPage() {
               year={m.year}
               x={m.x}
               y={m.y}
-              delay={1200 + i * 280}
+              delay={1200 + i * 240}
               onClick={() => handleOpenPopup(m.year)}
             />
           ))}
@@ -54,8 +57,8 @@ export default function HelixPage() {
 
       {/* Touch Popup Modal */}
       {selectedMilestone !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-          <div className="bg-white p-8 rounded-2xl max-w-lg shadow-2xl text-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm" onClick={handleClosePopup}>
+          <div className="bg-white p-8 rounded-2xl max-w-lg shadow-2xl text-slate-800" onClick={(e) => e.stopPropagation()}>
             <h2 className="text-2xl font-bold mb-2">Milestone Details</h2>
             <p className="text-slate-600 mb-6">
               Interactive display content goes here.

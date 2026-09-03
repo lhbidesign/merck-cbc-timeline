@@ -27,6 +27,7 @@ body {
 .stage {
   position: relative;
   width: min(100vw, calc(100vh * (var(--aspect-ratio-width) / var(--aspect-ratio-height))));
+  bottom: -15px;
   height: min(100vh, calc(100vw * (var(--aspect-ratio-height) / var(--aspect-ratio-width))));
   aspect-ratio: var(--aspect-ratio-width) / var(--aspect-ratio-height);
   overflow: visible;
@@ -171,10 +172,10 @@ svg.dna-svg {
     linear-gradient(90deg, #A0E8D3 -35.69%, #FFFFFF 127.74%) border-box;
 }
 
-.year-button-enter {
+.year-button-wrapper {
   opacity: 0;
   transform: translateY(28px);
-  animation: buttonEnter 0.85s ease-in-out forwards;
+  animation: buttonEnter 0.75s ease-out forwards;
   will-change: opacity, transform;
 }
 

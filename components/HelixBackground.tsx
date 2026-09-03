@@ -224,7 +224,8 @@ export default function HelixBackground({ children, paused = false }: HelixBackg
         return;
       }
 
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      // const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const dpr = 1;
       const rect = canvas.getBoundingClientRect();
 
       canvasW = rect.width;

@@ -14,7 +14,7 @@ export default function Button({ year, x, y, onClick, delay = 0 }: ButtonProps) 
       style={{ left: x, bottom: y }}
     >
       <div
-        className="year-button-enter"
+        className="year-button-wrapper"
         style={{ animationDelay: `${delay}ms` }}
         onAnimationEnd={(e) => {
           (e.currentTarget as HTMLDivElement).style.willChange = 'auto';
