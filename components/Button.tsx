@@ -22,7 +22,7 @@ export default function Button({ year, x, y, onClick, delay = 0 }: ButtonProps) 
       >
         <button
           onClick={onClick}
-          className="year-button pointer-events-auto flex items-center justify-center font-bold text-white rounded-full cursor-pointer transition-transform active:scale-95 shadow-xl select-none"
+          className="year-button flex items-center justify-center font-bold text-white rounded-full shadow-xl cursor-pointer transition-transform select-none pointer-events-auto active:scale-95"
         >
           {year}
         </button>

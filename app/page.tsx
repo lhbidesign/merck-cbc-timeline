@@ -4,6 +4,8 @@
 import { useEffect, useState } from 'react';
 import HelixBackground from '@/components/HelixBackground';
 import Button from '@/components/Button';
+import MilestoneModal from '@/components/MilestoneModal';
+import Image from 'next/image';
 
 const MILESTONES = [
   { year: 1906, x: '62%', y: '17%' },
@@ -38,10 +40,14 @@ export default function HelixPage() {
   }, [selectedMilestone]);
 
   return (
-    <main className="helix-container w-full h-full relative" onContextMenu={(e) => e.preventDefault()}>
+    <main
+      className="helix-container w-full h-full relative"
+      onContextMenu={(e) => e.preventDefault()}
+    >
+      <Image src="/merck-logo.svg" className="merck-logo" width={205} height={60} fetchPriority="high" loading="eager" alt="Merck Logo" />
+
       <HelixBackground key={animationKey} paused={selectedMilestone !== null}>
-        {/* Layer now positions strictly inside .stage */}
-        <div className="absolute inset-0 pointer-events-none z-20">
+        <div className="absolute inset-0 z-20 pointer-events-none">
           {MILESTONES.map((m, i) => (
             <Button
               key={m.year}
@@ -53,25 +59,12 @@ export default function HelixPage() {
             />
           ))}
         </div>
-      </HelixBackground>
 
-      {/* Touch Popup Modal */}
-      {selectedMilestone !== null && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm" onClick={handleClosePopup}>
-          <div className="bg-white p-8 rounded-2xl max-w-lg shadow-2xl text-slate-800" onClick={(e) => e.stopPropagation()}>
-            <h2 className="text-2xl font-bold mb-2">Milestone Details</h2>
-            <p className="text-slate-600 mb-6">
-              Interactive display content goes here.
-            </p>
-            <button
-              onClick={handleClosePopup}
-              className="px-6 py-2 bg-[#00857C] text-white rounded-lg cursor-pointer"
-            >
-              Close & Reset
-            </button>
-          </div>
-        </div>
-      )}
+        <MilestoneModal
+          selectedMilestone={selectedMilestone}
+          onClose={handleClosePopup}
+        />
+      </HelixBackground>
     </main>
   );
 }

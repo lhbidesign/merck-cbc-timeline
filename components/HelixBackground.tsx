@@ -121,12 +121,12 @@ export default function HelixBackground({ children, paused = false }: HelixBackg
     const scaleY = BUBBLE_BOX.height / BUBBLE_BOX.svgH;
 
     const rawBubbleDefs = [
-      { cx: 32, cy: 27, r: 23, fill: '#B2E8DF', fillOpacity: 0.85, isStroke: false, blur: 2, delay: 350, speed: 1.2, amp: 7 },
-      { cx: 77, cy: 318, r: 25, stroke: '#B2E8DF', strokeWidth: 4, isStroke: true, blur: 0.5, delay: 850, speed: 0.9, amp: 10 },
-      { cx: 1157.5, cy: 310.5, r: 10, stroke: '#B2E8DF', strokeWidth: 3, isStroke: true, blur: 1, delay: 1450, speed: 1.4, amp: 6 },
-      { cx: 19, cy: 347, r: 15, fill: '#B2E8DF', fillOpacity: 0.9, isStroke: false, blur: 2, delay: 600, speed: 1.1, amp: 8 },
-      { cx: 815, cy: 102, r: 42, fill: '#B2E8DF', fillOpacity: 0.9, isStroke: false, blur: 2, delay: 1100, speed: 0.7, amp: 12 },
-      { cx: 845, cy: 607, r: 8, fill: '#B2E8DF', fillOpacity: 0.9, isStroke: false, blur: 2, delay: 1750, speed: 1.6, amp: 5 },
+      { cx: 32, cy: 27, r: 23, fill: '#B2E8DF', fillOpacity: 0.42, isStroke: false, blur: 0, delay: 350, speed: 1.2, amp: 7 },
+      { cx: 77, cy: 318, r: 25, stroke: '#B2E8DF', strokeWidth: 3.5, isStroke: true, fillOpacity: 0.55, blur: 0, delay: 850, speed: 0.9, amp: 10 },
+      { cx: 1157.5, cy: 310.5, r: 10, stroke: '#B2E8DF', strokeWidth: 2.5, isStroke: true, fillOpacity: 0.48, blur: 0, delay: 1450, speed: 1.4, amp: 6 },
+      { cx: 19, cy: 347, r: 15, fill: '#B2E8DF', fillOpacity: 0.38, isStroke: false, blur: 0, delay: 600, speed: 1.1, amp: 8 },
+      { cx: 815, cy: 102, r: 42, fill: '#B2E8DF', fillOpacity: 0.32, isStroke: false, blur: 0, delay: 1100, speed: 0.7, amp: 12 },
+      { cx: 845, cy: 607, r: 8, fill: '#B2E8DF', fillOpacity: 0.48, isStroke: false, blur: 0, delay: 1750, speed: 1.6, amp: 5 }
     ];
 
     let canvasW = 0;
@@ -196,10 +196,10 @@ export default function HelixBackground({ children, paused = false }: HelixBackg
         context.save();
         context.globalAlpha = this.alpha;
 
-        if (this.figmaBlur > 0) {
-          context.shadowColor = '#B2E8DF';
-          context.shadowBlur = this.figmaBlur * currentStageScale * 2.5;
-        }
+        // if (this.figmaBlur > 0) {
+        //   context.shadowColor = '#B2E8DF';
+        //   context.shadowBlur = this.figmaBlur * currentStageScale * 2.5;
+        // }
 
         context.beginPath();
         context.arc(baseX, baseY, radius, 0, Math.PI * 2);
@@ -272,6 +272,7 @@ export default function HelixBackground({ children, paused = false }: HelixBackg
   return (
     <div className="stage" id="stage" ref={stageRef}>
       <div className="veil" />
+
       <canvas id="bubbleCanvas" ref={canvasRef} />
 
       <div className="dna-glow" />

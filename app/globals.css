@@ -1,33 +1,135 @@
 /* app/globals.css */
 @import "tailwindcss";
 
+/* -------------------------------------------------- */
+/* Invention Font Faces                               */
+/* -------------------------------------------------- */
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-LightItalic.woff2') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Invention';
+  src: url('/fonts/Invention-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --aspect-ratio-width: 1366;
   --aspect-ratio-height: 1024;
-  --background: #ffffff;
-  --foreground: #171717;
+  --cqw-unit: calc(100cqw / var(--aspect-ratio-width));
+  --color-merck-teal: #00857C;
+  --color-merck-mint: #B2E8DF;
+  --color-merck-mint-light: #D9EFEA;
+  --color-merck-mint-hover: #C9EEE8;
+  --color-modal-backdrop: #00544E99;
+  --color-modal-divider: #A5A5A5;
+  --color-modal-title: #1A1A1A;
+  --color-modal-body: #555555;
+  --color-modal-muted: #AAAAAA;
+  --color-modal-source: #444444;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --max-height-modal-card: min(92vh, calc(860 * var(--cqw-unit)));
+  --spacing-modal-2: calc(2 * var(--cqw-unit));
+  --spacing-modal-6: calc(6 * var(--cqw-unit));
+  --spacing-modal-8: calc(8 * var(--cqw-unit));
+  --spacing-modal-12: calc(12 * var(--cqw-unit));
+  --spacing-modal-14: calc(14 * var(--cqw-unit));
+  --spacing-modal-16: calc(16 * var(--cqw-unit));
+  --spacing-modal-20: calc(20 * var(--cqw-unit));
+  --spacing-modal-24: calc(24 * var(--cqw-unit));
+  --spacing-modal-28: calc(28 * var(--cqw-unit));
+  --spacing-modal-32: calc(32 * var(--cqw-unit));
+  --spacing-modal-40: calc(40 * var(--cqw-unit));
+  --spacing-modal-44: calc(44 * var(--cqw-unit));
+  --spacing-modal-48: calc(48 * var(--cqw-unit));
+  --spacing-modal-440: calc(440 * var(--cqw-unit));
+  --spacing-modal-540: calc(540 * var(--cqw-unit));
+  --spacing-modal-1120: calc(1120 * var(--cqw-unit));
+  --font-sans: 'Invention', system-ui, -apple-system, sans-serif;
+  --text-modal-11: calc(11 * var(--cqw-unit));
+  --text-modal-12: calc(12 * var(--cqw-unit));
+  --text-modal-13: calc(13 * var(--cqw-unit));
+  --text-modal-14: calc(14 * var(--cqw-unit));
+  --text-modal-20: calc(20 * var(--cqw-unit));
+  --text-modal-24: calc(24 * var(--cqw-unit));
+  --text-modal-72: calc(72 * var(--cqw-unit));
+  --radius-modal-26: calc(26 * var(--cqw-unit));
+  --radius-modal-36: calc(36 * var(--cqw-unit));
+  --color-merck-teal: var(--color-merck-teal);
+  --color-merck-mint: var(--color-merck-mint);
+  --color-merck-mint-light: var(--color-merck-mint-light);
+  --color-merck-mint-hover: var(--color-merck-mint-hover);
+  --color-modal-backdrop: var(--color-modal-backdrop);
+  --color-modal-divider: var(--color-modal-divider);
+  --color-modal-title: var(--color-modal-title);
+  --color-modal-body: var(--color-modal-body);
+  --color-modal-muted: var(--color-modal-muted);
+  --color-modal-source: var(--color-modal-source);
 }
 
 body {
-  background: linear-gradient(180deg, #ffffff 0%, #a6fef8 100%);
+  font-family: var(--font-sans);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #a6fef8 100%);
   touch-action: none;
   overscroll-behavior: none;
   -webkit-touch-callout: none;
 }
 
+.merck-logo {
+  position: absolute;
+  top: 2.5vw;
+  left: 2.5vw;
+  width: 10vw;
+  height: auto;
+  z-index: 20;
+}
+
 .stage {
   position: relative;
-  width: min(100vw, calc(100vh * (var(--aspect-ratio-width) / var(--aspect-ratio-height))));
   bottom: -15px;
+  width: min(100vw, calc(100vh * (var(--aspect-ratio-width) / var(--aspect-ratio-height))));
   height: min(100vh, calc(100vw * (var(--aspect-ratio-height) / var(--aspect-ratio-width))));
   aspect-ratio: var(--aspect-ratio-width) / var(--aspect-ratio-height);
   overflow: visible;
@@ -43,24 +145,24 @@ body {
 #bubbleCanvas {
   position: absolute;
   inset: 0;
+  z-index: 10;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 10;
 }
 
 svg.dna-svg {
   position: absolute;
   left: 0;
   top: calc((203 / var(--aspect-ratio-height)) * 100%);
+  z-index: 1;
+  display: block;
   width: calc((1044 / var(--aspect-ratio-width)) * 100%);
   height: calc((821 / var(--aspect-ratio-height)) * 100%);
-  display: block;
   overflow: visible;
   shape-rendering: geometricPrecision;
   filter: drop-shadow(0 15px 45px rgba(0, 133, 124, 0.08));
   animation: initialEntranceGlow 3.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
-  z-index: 1;
 }
 
 @keyframes initialEntranceGlow {
@@ -81,14 +183,14 @@ svg.dna-svg {
   position: absolute;
   left: 0;
   top: calc((203 / var(--aspect-ratio-height)) * 100%);
+  z-index: 0;
   width: calc((1044 / var(--aspect-ratio-width)) * 100%);
   height: calc((821 / var(--aspect-ratio-height)) * 100%);
+  transform: translateZ(0);
   background: radial-gradient(ellipse 60% 55% at 50% 55%, rgba(60, 188, 167, 0.55), transparent 70%);
   filter: blur(48px);
   opacity: 0.12;
   pointer-events: none;
-  z-index: 0;
-  transform: translateZ(0);
   will-change: opacity;
 }
 
@@ -111,18 +213,18 @@ svg.dna-svg {
 }
 
 .main-shape {
-  opacity: 0;
-  transform: translateY(5px);
   transform-box: fill-box;
   transform-origin: 50% 50%;
+  transform: translateY(5px);
+  opacity: 0;
   transition:
     opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
     transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-shape.in {
-  opacity: 1;
   transform: translateY(0);
+  opacity: 1;
 }
 
 .rung-group path {
@@ -139,11 +241,11 @@ svg.dna-svg {
 .veil {
   position: absolute;
   inset: -15%;
-  pointer-events: none;
+  z-index: 5;
   background: radial-gradient(circle at 50% 45%, rgba(166, 254, 248, 0.65), transparent 70%);
   opacity: 0;
+  pointer-events: none;
   animation: veilPulse 2.2s ease-out 0.05s forwards;
-  z-index: 5;
 }
 
 @keyframes veilPulse {
@@ -160,12 +262,11 @@ svg.dna-svg {
   }
 }
 
-/* Floating Year Buttons */
 .year-button {
-  width: calc((164 / 1366) * 100cqw);
-  height: calc((164 / 1366) * 100cqw);
-  font-size: calc((44 / 1366) * 100cqw);
-  border: calc((10 / 1366) * 100cqw) solid transparent;
+  width: calc(164 * var(--cqw-unit));
+  height: calc(164 * var(--cqw-unit));
+  font-size: calc(44 * var(--cqw-unit));
+  border: calc(10 * var(--cqw-unit)) solid transparent;
   border-radius: 50%;
   background:
     linear-gradient(180deg, #86CFCA 30%, #00857C 100%) padding-box,
@@ -173,8 +274,8 @@ svg.dna-svg {
 }
 
 .year-button-wrapper {
-  opacity: 0;
   transform: translateY(28px);
+  opacity: 0;
   animation: buttonEnter 0.75s ease-out forwards;
   will-change: opacity, transform;
 }
@@ -184,4 +285,10 @@ svg.dna-svg {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.bg-modal-radial {
+  background: radial-gradient(48.47% 48.47% at 4.9% 87.54%,
+      rgba(170, 241, 221, 0.9) 0%,
+      rgba(255, 255, 255, 1) 100%);
 }
