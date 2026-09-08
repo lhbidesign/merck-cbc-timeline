@@ -143,7 +143,7 @@ export default function MilestoneModal({ selectedMilestone, onClose }: Milestone
                   <span className="flex items-center justify-center shrink-0 w-modal-20 h-modal-20 mt-modal-2 text-modal-11 font-bold text-merck-teal rounded-full bg-merck-mint/70">
                     ✓
                   </span>
-                  <span>{bullet}</span>
+                  <span dangerouslySetInnerHTML={{ __html: bullet }} />
                 </li>
               ))}
             </ul>
