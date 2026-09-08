@@ -17,12 +17,13 @@ const MILESTONE_DATA: Record<string | number, MilestoneDetail> = {
     yearRange: '1906-1974',
     title: 'Early Lessons Shaped Stronger Protections',
     description:
-      "Clinical trials date back centuries. However, some historical clinical research did not provide the participant consent and protections that are required today. Notable cases (The Tuskegee Syphilis Study, in which Black men were denied treatment and information; the use of Henrietta Lacks's cells without her knowledge; early oral contraceptive trials on women in Puerto Rico without informed consent; and sterilization procedures on American Indian women at Indian Health Service facilities without consistent consent protections helped drive the push for stronger participant protections).",
+      "Clinical trials date back centuries. However, some historical clinical research did not provide the participant consent and protections that are required today. Notable cases (The Tuskegee Syphilis Study, in which Black men were denied treatment and information; the use of Henrietta Lacks's cells without her knowledge; early oral contraceptive trials on women in Puerto Rico without informed consent; and sterilization procedures on American Indian women at Indian Health Service facilities without consistent consent protections) helped drive the push for stronger participant protections.",
     bullets: [
-      'The Pure Food and Drugs Act (1906) established federal oversight of drug safety and helped lay the foundation for the U.S. Food and Drug Administration (FDA).',
-      'The Nuremberg Code (1947) established the principle of voluntary, informed consent.',
-      'The Kefauver-Harris Amendments (1962) required drugs to be proven safe and effective before approval and formalized informed consent as a requirement in clinical trials.',
-      'The Declaration of Helsinki (1964) introduced ethical principles for medical research involving human participants.',
+      '<strong>The Pure Food and Drugs Act (1906)</strong> established federal oversight of drug safety and helped lay the foundation for the U.S. Food and Drug Administration (FDA).',
+      '<strong>The Nuremberg Code (1947)</strong> established the principle of voluntary, informed consent.',
+      '<strong>The Kefauver-Harris Amendments (1962)</strong> required drugs to be proven safe and effective before approval and formalized informed consent as a requirement in clinical trials.',
+      '<strong>The Declaration of Helsinki (1964)</strong> introduced ethical principles for medical research involving human participants.',
+      '<strong>The National Research Act (1974)</strong> established Institutional Review Boards, requiring independent oversight to help protect the rights and welfare of research participants.',
     ],
     commitment:
       'Merck is committed to reducing barriers and increasing access to clinical trials for communities that have historically been underrepresented in research.',
@@ -34,9 +35,9 @@ const MILESTONE_DATA: Record<string | number, MilestoneDetail> = {
     description:
       'New standards and policies strengthened participant protections and placed greater focus on who is included in clinical research. Until the early 1990s, women and many racial and ethnic minority populations were underrepresented in medical research.',
     bullets: [
-      'The Belmont Report (1979) established three core principles for research involving human participants: respect for persons, beneficence, and justice.',
-      'The National Institutes of Health (NIH) Revitalization Act (1993) helped ensure women and members of minority groups were included in all NIH-funded research.',
-      'FDA guidance (2016) helped improve how race and ethnicity data are collected in clinical research.',
+      '<strong>The Belmont Report (1979)</strong> established three core principles for research involving human participants: respect for persons, beneficence, and justice.',
+      '<strong>The National Institutes of Health (NIH) Revitalization Act (1993)</strong> helped ensure women and members of minority groups were included in all NIH-funded research.',
+      '<strong>FDA guidance (2016)</strong> helped improve how race and ethnicity data are collected in clinical research.',
     ],
     commitment:
       'Merck is committed to reducing barriers and increasing access to clinical trials for communities that have historically been underrepresented in research.',
@@ -48,9 +49,9 @@ const MILESTONE_DATA: Record<string | number, MilestoneDetail> = {
     description:
       'The FDA and federal legislation like FDORA outlined ways for clinical trials to better reflect the populations they aim to serve.',
     bullets: [
-      'FDA guidance (2020) encouraged sponsors to proactively plan for more representative enrollment across race, ethnicity, sex, and age, and to monitor participation throughout a trial.',
-      'Diversity Action Plans (2022) formalized the expectation that sponsors outline specific strategies for reaching underrepresented communities before a trial begins.',
-      'The Food and Drug Omnibus Reform Act, or FDORA (2022), passed by Congress, made diversity action plans a legal requirement for most late-stage trials.',
+      '<strong>FDA guidance (2020)</strong> encouraged sponsors to proactively plan for more representative enrollment across race, ethnicity, sex, and age, and to monitor participation throughout a trial.',
+      '<strong>Diversity Action Plans (2022)</strong> formalized the expectation that sponsors outline specific strategies for reaching underrepresented communities before a trial begins.',
+      '<strong>The Food and Drug Omnibus Reform Act, or FDORA (2022)</strong>, passed by Congress, made diversity action plans a legal requirement for most late-stage trials.',
     ],
     commitment:
       'Merck is committed to reducing barriers and increasing access to clinical trials for communities that have historically been underrepresented in research.',
@@ -68,7 +69,6 @@ const MILESTONE_DATA: Record<string | number, MilestoneDetail> = {
     ],
     commitment:
       'Merck is committed to reducing barriers and increasing access to clinical trials for communities that have historically been underrepresented in research.',
-    sources: 'Sources: FDA; FDORA',
   },
 };
 
