@@ -44,6 +44,18 @@ export default function HelixPage() {
       className="helix-container w-full h-full relative"
       onContextMenu={(e) => e.preventDefault()}
     >
+      <div className="intro-heading">
+        <h1 className="font-bold text-[1.4vw] leading-tight tracking-tight text-merck-teal">
+          How Clinical Trial Protections, Transparency, and Inclusion Have Progressed
+        </h1>
+        <p className="mt-[0.6vw] font-normal text-[0.85vw] leading-relaxed text-modal-body">
+          Historical events and policy changes have shaped the ethical principles, participant protections, and inclusion practices that continue to influence clinical research today.
+        </p>
+        <div className="inline-block mt-[0.8vw] px-[1vw] py-[0.5vw] rounded-full border border-merck-mint bg-merck-mint/50 text-[0.7vw] font-bold tracking-wide text-merck-teal">
+          Tap an era to the right to explore
+        </div>
+      </div>
+
       <Image src="/merck-logo.svg" className="merck-logo" width={205} height={60} fetchPriority="high" loading="eager" alt="Merck Logo" />
 
       <HelixBackground key={animationKey} paused={selectedMilestone !== null}>
