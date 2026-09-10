@@ -59,7 +59,7 @@ const MILESTONE_DATA: Record<string | number, MilestoneDetail> = {
   },
   Today: {
     yearRange: 'Today',
-    title: 'Increasing Representation in Clinical Trials.',
+    title: 'Increasing Representation in Clinical Trials',
     description:
       'Efforts continue to make clinical trials more accessible for all communities. This includes:',
     bullets: [
